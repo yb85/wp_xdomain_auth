@@ -12,7 +12,7 @@ It is almost always a bad idea to self-implement cryptographic algorithms, never
 - You can use your WP install as a single source of truth, and administer it with Wordpress admin dashboard
 - There exists also WP plugins to enable Oauth on WP : using them you can login with GMAIL, ….
 
-**Use-case : ** A small team with a Wordpress blog want to regulate access to a set of homemade PHP utilities
+**Use-case :** A small team with a Wordpress blog want to regulate access to a set of homemade PHP utilities
 
 ## Install
 

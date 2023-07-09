@@ -4,7 +4,7 @@ Reasonnably secure cross-domain authentication using a WP user database.
 
 **TL;DR; : A PHP server can manage its login mechanism (`$_SESSION`) with the user database of a remote Wordpress install**
 
-It is almost always a bad idea to self-implement cryptographic algorithms, this code provides a plug-and-play solution for <u>non-critical</u> application (the code has not been  audited).  **NO GUARANTEE GIVEN, USE AT YOUR OWN RISK**
+It is almost always a bad idea to self-implement cryptographic algorithms, nevertheless this code provides a plug-and-play solution for <u>non-critical</u> applications (the code has not been  audited).  **NO GUARANTEE GIVEN, USE AT YOUR OWN RISK**
 
 **Benefits :**
 
@@ -12,7 +12,7 @@ It is almost always a bad idea to self-implement cryptographic algorithms, this 
 - You can use your WP install as a single source of truth, and administer it with Wordpress admin dashboard
 - There exists also WP plugins to enable Oauth on WP : using them you can login with GMAIL, ….
 
-**Usecase : ** A small team with a Wordpress blog want to regulate access to a set of homemade PHP utilities
+**Use-case : ** A small team with a Wordpress blog want to regulate access to a set of homemade PHP utilities
 
 ## Install
 

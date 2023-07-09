@@ -74,7 +74,7 @@ if (!isset($_SESSION['wp_xauth_valid'])) {
     }
 
     if (
-        $QUERY_FOR_PEM == $PEMQ::never
+        $QUERY_FOR_PEM == $PEMQ::always
         || (!file_exists($PUBPEM_FILE) && $QUERY_FOR_PEM == $PEMQ::ifneeded)
     ) {
         $curl_h = curl_init(WP_XAUTH_ENDPOINT);

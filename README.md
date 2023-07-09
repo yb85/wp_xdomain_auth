@@ -39,12 +39,12 @@ Say the WP host is `my-blog.wp-example.com` and the PHP foreign server host is `
 
 ## How it works
 
-**In a nutshell, the client presents a  document signed by the WP server to the foreign PHP server which verifies the authenticity off the signature with the WP server Public-key (no shared secret)**.
+**In a nutshell, the client presents a  document signed by the WP server to the foreign PHP server which verifies the authenticity of the signature with the WP server Public-key (no shared secret)**.
 
 - HTTPS is enforced for all requests. Having this pre-existing these trusted and secure channels implies we don’t have to further encrypt data exchanged between any party.
 - The client is redirected by the foreign PHP server  (code 302) to the WP server (more precisely to the addon you put in your WP install)
 - If not authenticated on the WP server, the client authentifies himself 
-- If/once the client is authenticated on WP, a document is generated on the WP server with a token from the client, the WP user info (name and email), and a random salt. The WP server signs the document with its Private Key (RSA/SHA256)  and sends it to the client as a GET parameter in a redirect  to the <u>whitelisted</u> foreign PHP server (code 302)
+- If/once the client is authenticated on WP, a document is generated on the WP server with a token from the client, the WP user info (name and email, you can remove those personal info if you want), and a random salt. The WP server signs the document with its Private Key (RSA/SHA256)  and sends it to the client as a GET parameter in a redirect  to the <u>whitelisted</u> foreign PHP server (code 302)
 - The foreign PHP server receives from the client the document, and the corresponding signature. He can verify with the WP server public key the signature, which is proof the client is a WP user
 - If the foreign PHP server does not have the public key, he can ask it directly over HTTPS to the WP server.
 - If the signature is verified, the foreign PHP server can open a session with the name and email contained in the document

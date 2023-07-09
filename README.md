@@ -44,6 +44,6 @@ Say the WP host is `my-blog.wp-example.com` and the PHP foreign server host is `
 - The client is redirected by the foreign PHP server  (code 302) to the WP server (more precisely to the addon you put in your WP install)
 - If not authenticated on the WP server, the client authentifies himself 
 - If/once the client is authenticated on WP, a document is generated on the WP server with a token from the client, the WP user info (name and email), and a random salt. The WP server signs the document with its Private Key (RSA/SHA256)  and sends it to the client as a GET parameter in a redirect  to the <u>whitelisted</u> foreign PHP server (code 302)
-- The foreign PHP server receives from the client the document, and the corresponding signature. He can verify with the WP server public key the 
+- The foreign PHP server receives from the client the document, and the corresponding signature. He can verify with the WP server public key the signature, which is proof the client is a WP user
 - If the foreign PHP server does not have the public key, he can ask it directly over HTTPS to the WP server.
 - If the signature is verified, the foreign PHP server can open a session with the name and email contained in the document

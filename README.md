@@ -22,6 +22,7 @@ Say the WP host is `my-blog.wp-example.com` and the PHP foreign server host is `
 
    - The trusted hosts are the full domain names where you want to use the cross-domain authentication (e.g. `my-php-app.php-example.com`)
    - if you need more granularity you can edit the validation code, it is not too difficult
+   - If you don't need to know who is login in, but only if this person is a WP user, you can remove the username and the email from the exchanged document. In that case no personnal information about the user is given to the PHP server
 
 2. Make a request to `https://my-blog.wp-example.com/wp-admin/_xdomain_auth_addon/init.php`. You may delete afterwards this `init.php` file (you can keep it also as it is handy to regenerate a new keypair. **Make sure the generated PHP file containing the keys (`_wp_xdomain_auth/_gen_KEYPAIR.php`) is interpreted by the server !**
 
